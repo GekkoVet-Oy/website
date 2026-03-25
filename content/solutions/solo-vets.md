@@ -1,0 +1,30 @@
+---
+title: "Solo Veterinarians"
+description: "GekkoVet for solo veterinary practitioners — your personal AI assistant for daily clinical work."
+type: "solutions"
+heroTitle: "Your Personal AI Veterinary Assistant"
+heroSubtitle: "Practice with confidence. Get an affordable, evidence-based second opinion — anytime, anywhere."
+problem:
+  - "Working alone without colleagues to consult on complex cases"
+  - "Keeping up with the latest treatment protocols across hundreds of conditions"
+  - "Risk of diagnostic errors without peer review"
+  - "Cognitive overload from drug dosing calculations under time pressure"
+  - "Limited access to specialist knowledge in remote or rural settings"
+solution:
+  - "Copilot acts as your always-available AI second opinion — chat or speak naturally"
+  - "Evidence-based diagnostic suggestions grounded in 80,000+ pages of veterinary literature"
+  - "Instant drug dosing calculations adjusted for species and weight"
+  - "SOAP note generation from voice input — save time on documentation"
+  - "Multilingual support — works in your language, wherever you practice"
+products:
+  - name: "Copilot"
+    icon: "💬"
+    url: "/products/copilot/"
+    description: "AI-powered second opinion via chat, voice, or image. Your daily clinical companion."
+  - name: "Compass"
+    icon: "🧭"
+    url: "/products/compass/"
+    description: "Structured diagnostic workflows for methodical case workup."
+ctaTitle: "Try Copilot — Built for Vets Like You"
+ctaSubtitle: "Available on web, iOS, and Android."
+---

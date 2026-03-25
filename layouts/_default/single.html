@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article>
+  {{/* Hero section if heroTitle is set in front matter */}}
+  {{ with .Params.heroTitle }}
+  <section class="bg-brand-dark text-white section-padding">
+    <div class="container-narrow text-center">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4">{{ . }}</h1>
+      {{ with $.Params.heroSubtitle }}
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">{{ . }}</p>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="section-padding">
+    <div class="container-narrow prose prose-lg max-w-none">
+      {{ .Content }}
+    </div>
+  </section>
+</article>
+{{ end }}

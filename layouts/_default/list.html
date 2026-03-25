@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article>
+  {{/* Hero section */}}
+  {{ with .Params.heroTitle }}
+  <section class="bg-brand-dark text-white section-padding">
+    <div class="container-narrow text-center">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4">{{ . }}</h1>
+      {{ with $.Params.heroSubtitle }}
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">{{ . }}</p>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="section-padding">
+    <div class="container-narrow prose prose-lg max-w-none">
+      {{ .Content }}
+    </div>
+
+    {{/* List child pages if no custom content */}}
+    {{ if not .Content }}
+    <div class="container-narrow grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {{ range .Pages }}
+        <a href="{{ .RelPermalink }}" class="card group border-2 border-transparent hover:border-brand-green">
+          <h3 class="text-lg font-bold text-brand-charcoal group-hover:text-brand-green transition-colors mb-2">{{ .Title }}</h3>
+          <p class="text-gray-500 text-sm">{{ .Description }}</p>
+        </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </section>
+</article>
+{{ end }}

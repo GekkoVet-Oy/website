@@ -1,0 +1,32 @@
+---
+title: "Veterinary Clinics & Groups"
+description: "GekkoVet for veterinary clinic groups — standardize diagnostics, improve quality assurance, and accelerate onboarding."
+type: "solutions"
+heroTitle: "Standardize Care Across Your Clinic Network"
+heroSubtitle: "Ensure consistent, evidence-based diagnostics and treatment quality across every clinician and location."
+problem:
+  - "Diagnostic variability between clinicians and locations"
+  - "Slow onboarding of new veterinarians"
+  - "No standardized treatment protocols across the network"
+  - "Difficulty maintaining quality assurance at scale"
+  - "Inconsistent clinical documentation"
+solution:
+  - "Standardized diagnostic and treatment logic across all clinicians"
+  - "Faster onboarding — new vets access the same decision support as experienced staff"
+  - "Network-wide quality assurance through consistent AI-assisted workflows"
+  - "Structured data collection enabling performance benchmarking"
+  - "Copilot for daily clinical support, Compass for structured case workup"
+products:
+  - name: "Copilot"
+    icon: "💬"
+    url: "/products/copilot/"
+    description: "AI second opinion for every clinician in your network."
+  - name: "Compass"
+    icon: "🧭"
+    url: "/products/compass/"
+    description: "Structured diagnostics ensuring consistent clinical reasoning."
+  - name: "APIs"
+    icon: "⚡"
+    url: "/products/api/"
+    description: "Integrate into your existing PIMS for seamless workflows."
+---

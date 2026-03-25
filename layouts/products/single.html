@@ -1,0 +1,76 @@
+{{ define "main" }}
+<article>
+  {{/* Hero */}}
+  <section class="bg-brand-dark text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          {{ with .Params.badge }}
+            <span class="inline-block text-xs font-bold text-brand-green uppercase tracking-wider mb-4 bg-brand-green/10 px-3 py-1 rounded-full">{{ . }}</span>
+          {{ end }}
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-6">{{ .Params.heroTitle | default .Title }}</h1>
+          <p class="text-lg md:text-xl text-gray-300 mb-8">{{ .Params.heroSubtitle }}</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            {{ with .Params.primaryCTA }}
+              <a href="{{ .url }}" class="btn-primary text-lg !px-8 !py-4">{{ .label }}</a>
+            {{ end }}
+            {{ with .Params.secondaryCTA }}
+              <a href="{{ .url }}" class="btn-secondary text-lg !px-8 !py-4 !border-white !text-white hover:!bg-white hover:!text-brand-dark">{{ .label }}</a>
+            {{ end }}
+          </div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-8 text-center">
+          {{ with .Params.heroImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}" class="rounded-lg">
+          {{ else }}
+            <p class="text-6xl mb-4">{{ .Params.heroEmoji | default "🩺" }}</p>
+            <p class="text-sm text-gray-400">Screenshot coming soon</p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* Features */}}
+  {{ with .Params.features }}
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-charcoal">Key Features</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range . }}
+          <div class="card">
+            <div class="w-10 h-10 bg-brand-green/10 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-xl">{{ .icon }}</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-charcoal mb-2">{{ .title }}</h3>
+            <p class="text-gray-500 text-sm">{{ .description }}</p>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Content from markdown */}}
+  {{ if .Content }}
+  <section class="section-padding bg-brand-gray">
+    <div class="container-narrow prose prose-lg max-w-none">
+      {{ .Content }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* CTA */}}
+  <section class="bg-brand-green text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">{{ .Params.ctaTitle | default (printf "Get Started with %s" .Title) }}</h2>
+      <p class="text-white/80 text-lg mb-8">{{ .Params.ctaSubtitle | default "Join thousands of veterinary professionals worldwide." }}</p>
+      {{ with .Params.primaryCTA }}
+        <a href="{{ .url }}" class="inline-block bg-white text-brand-green font-bold px-8 py-4 rounded-md hover:bg-gray-100 transition-colors text-lg">{{ .label }}</a>
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{ end }}

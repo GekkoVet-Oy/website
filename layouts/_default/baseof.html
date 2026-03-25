@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+  {{/* Open Graph */}}
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+
+  {{/* Canonical */}}
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{/* Tailwind CSS */}}
+  {{ with resources.Get "css/main.css" }}
+    {{ $css := . | css.TailwindCSS }}
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ end }}
+
+  {{/* Favicon */}}
+  <link rel="icon" type="image/svg+xml" href="/images/logos/gekkovet-logo-greenblack.svg">
+</head>
+<body class="min-h-screen flex flex-col bg-white font-sans">
+  {{ partial "header.html" . }}
+
+  <main class="flex-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+</body>
+</html>

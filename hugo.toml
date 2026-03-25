@@ -1,3 +1,139 @@
 baseURL = 'https://www.gekkovet.com/'
-locale = 'en-us'
+languageCode = 'en-us'
 title = 'GekkoVet'
+
+[params]
+  tagline = 'The Intelligence Layer for Animal Health'
+  description = 'GekkoVet provides AI-powered veterinary diagnostic assistance, treatment support, and clinical decision tools for veterinary professionals worldwide.'
+  copilotURL = 'https://copilot.gekkovet.com'
+  compassURL = 'https://compass.gekkovet.com'
+  developersURL = 'https://developers.gekkovet.com'
+  compassLoginURL = 'https://compass.gekkovet.com/login'
+  compassRegisterURL = 'https://compass.gekkovet.com/register'
+
+  [params.social]
+    instagram = 'https://www.instagram.com/gekkovetus/'
+    facebook = 'https://www.facebook.com/gekkovet'
+    linkedin = 'https://www.linkedin.com/company/gekkovet-oy'
+
+# ===== Menus =====
+
+[[menus.main]]
+  name = 'Products'
+  weight = 10
+  identifier = 'products'
+  hasChildren = true
+
+[[menus.main]]
+  name = 'Copilot'
+  parent = 'products'
+  url = '/products/copilot/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Compass'
+  parent = 'products'
+  url = '/products/compass/'
+  weight = 2
+
+[[menus.main]]
+  name = 'APIs'
+  parent = 'products'
+  url = '/products/api/'
+  weight = 3
+
+[[menus.main]]
+  name = 'Solutions'
+  weight = 20
+  identifier = 'solutions'
+  hasChildren = true
+
+[[menus.main]]
+  name = 'Solo Veterinarians'
+  parent = 'solutions'
+  url = '/solutions/solo-vets/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Clinics & Groups'
+  parent = 'solutions'
+  url = '/solutions/clinics/'
+  weight = 2
+
+[[menus.main]]
+  name = 'Insurance'
+  parent = 'solutions'
+  url = '/solutions/insurance/'
+  weight = 3
+
+[[menus.main]]
+  name = 'Platforms & PIMS'
+  parent = 'solutions'
+  url = '/solutions/platforms/'
+  weight = 4
+
+[[menus.main]]
+  name = 'Pharma & Research'
+  parent = 'solutions'
+  url = '/solutions/pharma/'
+  weight = 5
+
+[[menus.main]]
+  name = 'Telemedicine'
+  parent = 'solutions'
+  url = '/solutions/telemedicine/'
+  weight = 6
+
+[[menus.main]]
+  name = 'Developers'
+  url = 'https://developers.gekkovet.com'
+  weight = 30
+
+[[menus.main]]
+  name = 'Resources'
+  weight = 40
+  identifier = 'resources'
+  hasChildren = true
+
+[[menus.main]]
+  name = 'Sources'
+  parent = 'resources'
+  url = '/resources/sources/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Webinars'
+  parent = 'resources'
+  url = '/resources/webinars/'
+  weight = 2
+
+[[menus.main]]
+  name = 'Podcasts'
+  parent = 'resources'
+  url = '/resources/podcasts/'
+  weight = 3
+
+[[menus.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 50
+
+[[menus.main]]
+  name = 'Contact'
+  url = '/contact/'
+  weight = 60
+
+# ===== Build Settings =====
+
+[build]
+  [build.buildStats]
+    enable = true
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
