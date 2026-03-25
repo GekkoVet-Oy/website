@@ -1,45 +1,6 @@
 @import "tailwindcss";
 
-/* ===== Brand Fonts ===== */
-@font-face {
-  font-family: 'Alegreya Sans';
-  src: url('/fonts/AlegreyaSans-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Alegreya Sans';
-  src: url('/fonts/AlegreyaSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Alegreya Sans';
-  src: url('/fonts/AlegreyaSans-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Alegreya Sans';
-  src: url('/fonts/AlegreyaSans-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Alegreya Sans';
-  src: url('/fonts/AlegreyaSans-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
+/* Font-face declarations are in baseof.html so Hugo can resolve paths with baseURL */
 
 /* ===== Tailwind v4 Theme ===== */
 @theme {

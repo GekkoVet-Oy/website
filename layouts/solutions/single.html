@@ -83,7 +83,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-4">{{ .Params.ctaTitle | default "Ready to Get Started?" }}</h2>
       <p class="text-white/80 text-lg mb-8">{{ .Params.ctaSubtitle | default "Let's discuss how GekkoVet can help your organization." }}</p>
-      <a href="/contact/" class="inline-block bg-white text-brand-green font-bold px-8 py-4 rounded-md hover:bg-gray-100 transition-colors text-lg">Contact Us →</a>
+      <a href="{{ "contact/" | relURL }}" class="inline-block bg-white text-brand-green font-bold px-8 py-4 rounded-md hover:bg-gray-100 transition-colors text-lg">Contact Us →</a>
     </div>
   </section>
 </article>

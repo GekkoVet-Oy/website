@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       {{/* Column 1: Logo + tagline */}}
       <div class="lg:col-span-1">
-        <img src="/images/logos/gekkovet-logo-white.svg" alt="GekkoVet" class="h-8 mb-4">
+        <img src="{{ "images/logos/gekkovet-logo-white.svg" | relURL }}" alt="GekkoVet" class="h-8 mb-4">
         <p class="text-gray-400 text-sm">{{ .Site.Params.tagline }}</p>
         <div class="flex space-x-4 mt-6">
           {{ with .Site.Params.social.linkedin }}
@@ -28,9 +28,9 @@
       <div>
         <h4 class="font-bold text-sm uppercase tracking-wider mb-4">Products</h4>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/products/copilot/" class="hover:text-white transition-colors">Copilot</a></li>
-          <li><a href="/products/compass/" class="hover:text-white transition-colors">Compass</a></li>
-          <li><a href="/products/api/" class="hover:text-white transition-colors">APIs</a></li>
+          <li><a href="{{ "products/copilot/" | relURL }}" class="hover:text-white transition-colors">Copilot</a></li>
+          <li><a href="{{ "products/compass/" | relURL }}" class="hover:text-white transition-colors">Compass</a></li>
+          <li><a href="{{ "products/api/" | relURL }}" class="hover:text-white transition-colors">APIs</a></li>
           <li><a href="{{ .Site.Params.developersURL }}" class="hover:text-white transition-colors">Developer Docs</a></li>
         </ul>
       </div>
@@ -39,12 +39,12 @@
       <div>
         <h4 class="font-bold text-sm uppercase tracking-wider mb-4">Solutions</h4>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/solutions/solo-vets/" class="hover:text-white transition-colors">Solo Veterinarians</a></li>
-          <li><a href="/solutions/clinics/" class="hover:text-white transition-colors">Clinics & Groups</a></li>
-          <li><a href="/solutions/insurance/" class="hover:text-white transition-colors">Insurance</a></li>
-          <li><a href="/solutions/platforms/" class="hover:text-white transition-colors">Platforms & PIMS</a></li>
-          <li><a href="/solutions/pharma/" class="hover:text-white transition-colors">Pharma & Research</a></li>
-          <li><a href="/solutions/telemedicine/" class="hover:text-white transition-colors">Telemedicine</a></li>
+          <li><a href="{{ "solutions/solo-vets/" | relURL }}" class="hover:text-white transition-colors">Solo Veterinarians</a></li>
+          <li><a href="{{ "solutions/clinics/" | relURL }}" class="hover:text-white transition-colors">Clinics & Groups</a></li>
+          <li><a href="{{ "solutions/insurance/" | relURL }}" class="hover:text-white transition-colors">Insurance</a></li>
+          <li><a href="{{ "solutions/platforms/" | relURL }}" class="hover:text-white transition-colors">Platforms & PIMS</a></li>
+          <li><a href="{{ "solutions/pharma/" | relURL }}" class="hover:text-white transition-colors">Pharma & Research</a></li>
+          <li><a href="{{ "solutions/telemedicine/" | relURL }}" class="hover:text-white transition-colors">Telemedicine</a></li>
         </ul>
       </div>
 
@@ -52,11 +52,11 @@
       <div>
         <h4 class="font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="/about/team/" class="hover:text-white transition-colors">Team</a></li>
-          <li><a href="/press/" class="hover:text-white transition-colors">Press</a></li>
-          <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
-          <li><a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="{{ "about/" | relURL }}" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="{{ "about/team/" | relURL }}" class="hover:text-white transition-colors">Team</a></li>
+          <li><a href="{{ "press/" | relURL }}" class="hover:text-white transition-colors">Press</a></li>
+          <li><a href="{{ "contact/" | relURL }}" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="{{ "privacy-policy/" | relURL }}" class="hover:text-white transition-colors">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
