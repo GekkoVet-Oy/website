@@ -1,0 +1,3 @@
+baseURL = 'https://www.gekkovet.com/'
+locale = 'en-us'
+title = 'GekkoVet'
