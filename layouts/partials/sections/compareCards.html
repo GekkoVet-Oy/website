@@ -16,7 +16,7 @@
           {{ end }}
           <p class="text-gray-600 leading-relaxed">{{ .body | safeHTML }}</p>
           {{ with .cta }}
-            <a href="{{ if hasPrefix .url "http" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} class="inline-block mt-6 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">{{ .label }} →</a>
+            <a href="{{ partial "url.html" .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} class="inline-block mt-6 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">{{ .label }} →</a>
           {{ end }}
         </div>
       {{ end }}

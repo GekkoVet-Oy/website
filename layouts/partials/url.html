@@ -1,0 +1,21 @@
+{{- /* Resolves a URL that may be external, root-absolute ("/pims/"), or
+       a query-suffixed root path ("/contact/?mode=pims") to a working href
+       under the site's baseURL — handles GitHub Pages subpath correctly.
+       Usage: {{ partial "url.html" .url }} */ -}}
+{{- $url := . -}}
+{{- if or (hasPrefix $url "http") (hasPrefix $url "mailto:") (hasPrefix $url "tel:") (hasPrefix $url "#") -}}
+{{- $url -}}
+{{- else -}}
+{{- /* Split off ?query and #fragment, fix the path, reattach. */ -}}
+{{- $path := $url -}}{{- $suffix := "" -}}
+{{- if strings.Contains $path "?" -}}
+  {{- $parts := split $path "?" -}}
+  {{- $path = index $parts 0 -}}
+  {{- $suffix = printf "?%s" (index $parts 1) -}}
+{{- else if strings.Contains $path "#" -}}
+  {{- $parts := split $path "#" -}}
+  {{- $path = index $parts 0 -}}
+  {{- $suffix = printf "#%s" (index $parts 1) -}}
+{{- end -}}
+{{- printf "%s%s" ($path | strings.TrimPrefix "/" | relURL) $suffix -}}
+{{- end -}}

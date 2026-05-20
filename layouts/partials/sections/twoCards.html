@@ -7,7 +7,7 @@
           <h3 class="text-2xl font-bold text-brand-charcoal mb-4">{{ .title }}</h3>
           <p class="text-gray-600 leading-relaxed mb-6">{{ .body | safeHTML }}</p>
           {{ with .cta }}
-            <a href="{{ .url | relURL }}" class="text-brand-green font-semibold hover:text-brand-green-dark transition-colors">{{ .label }} →</a>
+            <a href="{{ partial "url.html" .url }}" class="text-brand-green font-semibold hover:text-brand-green-dark transition-colors">{{ .label }} →</a>
           {{ end }}
         </div>
       {{ end }}
