@@ -50,7 +50,7 @@ sections:
       - initials: "MO"
         name: "Mailis Orakoski"
         title: "Marketing & Communications"
-        bio: "Marketing and communications strategy. <em>(Placeholder — to be edited.)</em>"
+        bio: "Marketing and communications strategy."
 
   - type: prose
     gray: true
