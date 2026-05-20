@@ -1,0 +1,29 @@
+{{ $d := .data }}
+{{ $page := .page }}
+{{ $photo := $d.photo }}
+<section class="text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8{{ if $photo }} hero-photo{{ else }} bg-brand-dark{{ end }}"
+  {{ if $photo }}style="background-image: url('{{ printf "images/photos/%s" $photo | relURL }}');"{{ end }}>
+  <div class="max-w-5xl mx-auto text-center">
+    {{ with $d.eyebrow }}
+      <p class="text-brand-green uppercase tracking-widest text-sm font-bold mb-4">{{ . }}</p>
+    {{ end }}
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">{{ $d.title | safeHTML }}</h1>
+    {{ with $d.subtitle }}
+      <p class="text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">{{ . | safeHTML }}</p>
+    {{ end }}
+    {{ with $d.ctas }}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {{ range . }}
+          {{ $external := hasPrefix .url "http" }}
+          <a href="{{ if $external }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}
+            class="{{ if .primary }}btn-primary{{ else }}btn-secondary !border-white !text-white hover:!bg-white hover:!text-brand-dark{{ end }} text-base !px-7 !py-3.5">
+            {{ .label }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with $d.caption }}
+      <p class="text-gray-300 text-sm mt-6">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>

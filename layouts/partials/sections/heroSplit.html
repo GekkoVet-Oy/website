@@ -1,0 +1,21 @@
+{{ $d := .data }}
+{{ $photo := $d.photo }}
+<section class="text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8{{ if $photo }} hero-photo{{ else }} bg-brand-dark{{ end }}"
+  {{ if $photo }}style="background-image: url('{{ printf "images/photos/%s" $photo | relURL }}');"{{ end }}>
+  <div class="max-w-6xl mx-auto text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">{{ $d.title | safeHTML }}</h1>
+    {{ with $d.subtitle }}
+      <p class="text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed">{{ . | safeHTML }}</p>
+    {{ end }}
+    {{ with $d.cards }}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+        {{ range . }}
+          <a href="{{ .url | relURL }}" class="cta-card {{ if .primary }}cta-card-primary{{ end }}">
+            <span class="block text-lg md:text-xl">{{ .label }}</span>
+            <span class="block text-brand-green text-sm mt-2 {{ if .primary }}text-white/90{{ end }}">{{ .sub }} →</span>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>

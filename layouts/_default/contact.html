@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ $endpoint := .Site.Params.formspreeEndpoint }}
+<section class="text-white py-20 md:py-24 px-4 sm:px-6 lg:px-8 hero-photo"
+  style="background-image: url('{{ printf "images/photos/%s" (default "image14.jpeg" .Params.heroImage) | relURL }}');">
+  <div class="max-w-3xl mx-auto text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">{{ .Title }}</h1>
+    <p class="text-lg md:text-xl text-gray-200">{{ .Params.heroSubtitle }}</p>
+  </div>
+</section>
+
+<section class="section-padding bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex justify-center gap-2 mb-10" role="tablist">
+      <button type="button" data-mode-btn="pims" class="mode-btn px-6 py-3 rounded-md font-semibold border-2 border-brand-green transition-all">Platform / PIMS</button>
+      <button type="button" data-mode-btn="insurer" class="mode-btn px-6 py-3 rounded-md font-semibold border-2 border-brand-green transition-all">Insurer</button>
+    </div>
+
+    <form id="contact-form" action="{{ $endpoint }}" method="POST" class="space-y-5">
+      <input type="hidden" name="mode" id="form-mode" value="pims">
+      <input type="hidden" name="_subject" id="form-subject" value="New PIMS demo request">
+
+      <div>
+        <label for="name" class="block text-sm font-semibold text-brand-charcoal mb-2">Name</label>
+        <input id="name" name="name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-semibold text-brand-charcoal mb-2">Work email</label>
+        <input id="email" name="email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div>
+        <label for="company" class="block text-sm font-semibold text-brand-charcoal mb-2">Company</label>
+        <input id="company" name="company" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div>
+        <label for="role" class="block text-sm font-semibold text-brand-charcoal mb-2">Role / Title</label>
+        <input id="role" name="role" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div data-field="pims">
+        <label for="clinics" class="block text-sm font-semibold text-brand-charcoal mb-2">Approximate number of clinics on your platform</label>
+        <input id="clinics" name="clinics" type="text" placeholder="e.g. 500" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div data-field="insurer" class="hidden">
+        <label for="volume" class="block text-sm font-semibold text-brand-charcoal mb-2">Approximate annual record volume</label>
+        <input id="volume" name="volume" type="text" placeholder="e.g. 50,000" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+      </div>
+
+      <div data-field="insurer" class="hidden">
+        <label for="interest" class="block text-sm font-semibold text-brand-charcoal mb-2">Primary interest</label>
+        <select id="interest" name="interest" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none bg-white">
+          <option>Underwriting</option>
+          <option>Claims</option>
+          <option>Both</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-semibold text-brand-charcoal mb-2">Anything else you'd like us to know</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none"></textarea>
+      </div>
+
+      <div class="pt-2">
+        <button type="submit" id="submit-btn" class="btn-primary w-full !py-4 text-base">Request a Technical Demo</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="{{ "js/contact-form.js" | relURL }}" defer></script>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ $d := .data }}
+<section class="section-padding bg-white">
+  <div class="max-w-6xl mx-auto">
+    {{ with $d.title }}
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-charcoal text-center mb-12">{{ . }}</h2>
+    {{ end }}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {{ range $d.members }}
+        <div class="bg-brand-gray rounded-xl p-6 flex gap-4">
+          <div class="w-14 h-14 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">{{ .initials }}</div>
+          <div>
+            <h3 class="font-bold text-brand-charcoal">{{ .name }}</h3>
+            <p class="text-brand-green text-sm font-semibold mb-2">{{ .title }}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{{ .bio | safeHTML }}</p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

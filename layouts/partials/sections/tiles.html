@@ -1,0 +1,23 @@
+{{ $d := .data }}
+{{ $cols := default 3 $d.columns }}
+{{ $colsClass := "md:grid-cols-2 lg:grid-cols-3" }}
+{{ if eq $cols 2 }}{{ $colsClass = "md:grid-cols-2" }}{{ end }}
+{{ if eq $cols 4 }}{{ $colsClass = "md:grid-cols-2 lg:grid-cols-4" }}{{ end }}
+<section class="section-padding {{ if $d.dark }}bg-brand-dark text-white{{ else }}bg-white{{ end }}">
+  <div class="max-w-6xl mx-auto">
+    {{ with $d.title }}
+      <h2 class="text-3xl md:text-4xl font-extrabold {{ if $d.dark }}text-white{{ else }}text-brand-charcoal{{ end }} text-center mb-4">{{ . | safeHTML }}</h2>
+    {{ end }}
+    {{ with $d.intro }}
+      <p class="text-lg {{ if $d.dark }}text-gray-300{{ else }}text-gray-500{{ end }} text-center max-w-3xl mx-auto mb-12">{{ . | safeHTML }}</p>
+    {{ end }}
+    <div class="grid grid-cols-1 {{ $colsClass }} gap-6 md:gap-8">
+      {{ range $d.items }}
+        <div class="{{ if $d.dark }}bg-white/5 border border-white/10{{ else }}bg-brand-gray{{ end }} rounded-xl p-6 md:p-8">
+          <h3 class="font-bold text-lg mb-3 {{ if $d.dark }}text-white{{ else }}text-brand-charcoal{{ end }}">{{ .title }}</h3>
+          <p class="{{ if $d.dark }}text-gray-300{{ else }}text-gray-600{{ end }} leading-relaxed text-sm md:text-base">{{ .body | safeHTML }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

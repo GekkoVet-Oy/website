@@ -1,0 +1,10 @@
+{{ $d := .data }}
+<section class="py-2 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+      {{ range $d.photos }}
+        <div class="aspect-[3/2] bg-cover bg-center rounded-lg" style="background-image: url('{{ printf "images/photos/%s" . | relURL }}');"></div>
+      {{ end }}
+    </div>
+  </div>
+</section>

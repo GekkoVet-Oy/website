@@ -1,0 +1,11 @@
+{{ $d := .data }}
+<section class="section-padding {{ if $d.gray }}bg-brand-gray{{ else }}bg-white{{ end }}">
+  <div class="max-w-4xl mx-auto">
+    {{ with $d.title }}
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-charcoal mb-6 {{ if $d.center }}text-center{{ end }}">{{ . | safeHTML }}</h2>
+    {{ end }}
+    <div class="prose prose-lg max-w-none text-gray-700">
+      {{ $d.body | markdownify }}
+    </div>
+  </div>
+</section>

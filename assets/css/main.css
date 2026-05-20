@@ -52,4 +52,87 @@
   .card {
     @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
   }
+
+  .hero-photo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(26, 26, 46, 0.78), rgba(26, 26, 46, 0.88));
+    pointer-events: none;
+  }
+  .hero-photo > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-card {
+    @apply block bg-white text-brand-charcoal rounded-xl px-6 py-8 text-center font-semibold
+           shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 border-2 border-transparent
+           hover:border-brand-green;
+  }
+  .cta-card-primary {
+    @apply bg-brand-green text-white hover:bg-brand-green-dark border-brand-green;
+  }
+
+  .prose {
+    color: var(--color-brand-charcoal);
+    line-height: 1.7;
+  }
+  .prose p {
+    margin-top: 0;
+    margin-bottom: 1.25em;
+  }
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+  .prose h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    color: var(--color-brand-charcoal);
+  }
+  .prose h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  .prose ul, .prose ol {
+    margin-top: 1em;
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+  }
+  .prose ul {
+    list-style: disc;
+  }
+  .prose ol {
+    list-style: decimal;
+  }
+  .prose li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+  .prose a {
+    color: var(--color-brand-green);
+    text-decoration: underline;
+  }
+  .prose a:hover {
+    color: var(--color-brand-green-dark);
+  }
+  .prose strong {
+    font-weight: 700;
+  }
+  .prose em {
+    font-style: italic;
+  }
+  .prose-lg {
+    font-size: 1.125rem;
+  }
 }

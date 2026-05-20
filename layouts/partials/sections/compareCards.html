@@ -1,0 +1,25 @@
+{{ $d := .data }}
+<section class="section-padding bg-brand-gray">
+  <div class="max-w-6xl mx-auto">
+    {{ with $d.title }}
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-charcoal text-center mb-4">{{ . | safeHTML }}</h2>
+    {{ end }}
+    {{ with $d.intro }}
+      <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">{{ . | safeHTML }}</p>
+    {{ end }}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {{ range $d.items }}
+        <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand-green">
+          <h3 class="text-2xl font-bold text-brand-charcoal mb-2">{{ .title }}</h3>
+          {{ with .tagline }}
+            <p class="text-brand-green font-semibold uppercase text-xs tracking-widest mb-4">{{ . }}</p>
+          {{ end }}
+          <p class="text-gray-600 leading-relaxed">{{ .body | safeHTML }}</p>
+          {{ with .cta }}
+            <a href="{{ if hasPrefix .url "http" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} class="inline-block mt-6 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">{{ .label }} →</a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
