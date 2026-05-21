@@ -35,9 +35,24 @@
       </nav>
 
       <div class="hidden lg:flex items-center space-x-3">
-        <a href="{{ .Site.Params.loginURL }}" target="_blank" rel="noopener" class="px-3 py-2 text-sm font-medium text-brand-charcoal hover:text-brand-green transition-colors">
-          Login
-        </a>
+        <div class="relative group">
+          <button type="button" class="px-3 py-2 text-sm font-medium text-brand-charcoal hover:text-brand-green transition-colors flex items-center gap-1">
+            Login
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[180px]">
+              <a href="{{ .Site.Params.copilotURL }}" target="_blank" rel="noopener" class="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray hover:text-brand-green transition-colors">
+                Copilot
+              </a>
+              <a href="{{ .Site.Params.compassURL }}" target="_blank" rel="noopener" class="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray hover:text-brand-green transition-colors">
+                Compass
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="{{ "contact/" | relURL }}" class="btn-primary text-sm !py-2 !px-4">
           Book a Demo
         </a>
@@ -67,7 +82,11 @@
         {{ end }}
       {{ end }}
       <hr class="my-2">
-      <a href="{{ .Site.Params.loginURL }}" target="_blank" rel="noopener" class="block px-3 py-2 text-sm font-medium text-brand-charcoal hover:text-brand-green">Login</a>
+      <div class="py-1">
+        <p class="px-3 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Login</p>
+        <a href="{{ .Site.Params.copilotURL }}" target="_blank" rel="noopener" class="block px-3 py-2 text-sm text-brand-charcoal hover:text-brand-green">Copilot</a>
+        <a href="{{ .Site.Params.compassURL }}" target="_blank" rel="noopener" class="block px-3 py-2 text-sm text-brand-charcoal hover:text-brand-green">Compass</a>
+      </div>
       <a href="{{ "contact/" | relURL }}" class="block btn-primary text-center text-sm">Book a Demo</a>
     </div>
   </div>

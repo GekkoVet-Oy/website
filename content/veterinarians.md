@@ -15,9 +15,9 @@ sections:
     caption: "Free for veterinary students."
 
   - type: prose
-    title: "How Copilot is different from our PIMS and Insurer offerings"
+    title: "How Copilot fits in"
     body: |
-      Unlike our PIMS and insurer offerings — which deliver the underlying structured dataset via API — **Copilot pairs that same dataset with an AI assistant for everyday clinical use** at the point of care. You get the validated knowledge base, plus a conversational interface that helps you reach the right information faster during an appointment.
+      Alongside our PIMS and insurer offerings — which deliver the underlying structured dataset via API — **Copilot pairs that same dataset with an AI assistant for everyday clinical use** at the point of care. You get the validated knowledge base, plus a conversational interface that helps you reach the right information faster during an appointment.
 
   - type: tiles
     title: "Built for clinical practice"
@@ -34,23 +34,6 @@ sections:
     title: "See Copilot in action"
     youtubeId: "tAq6TFAxpYQ"
     caption: "A short walkthrough of the Copilot interface."
-
-  - type: compareCards
-    title: "Copilot vs Compass — what's the difference?"
-    intro: "Both run on the same DVM-validated knowledge base. Choose the interface that fits how you work."
-    items:
-      - title: "Copilot"
-        tagline: "AI assistant"
-        body: "Open-ended AI assistant. Ask anything in natural language — symptoms, signalment, drug questions — and get structured clinical answers grounded in the validated dataset. Best for fast lookup and consultation support during appointments."
-        cta:
-          label: "Try Copilot Free"
-          url: "https://copilot.gekkovet.com"
-      - title: "Compass"
-        tagline: "Structured workflows"
-        body: "Step-by-step diagnostic workflows from presenting complaint through differential diagnosis to treatment planning. Best when you want a guided framework rather than free-form Q&A. Same underlying validated knowledge base."
-        cta:
-          label: "Open Compass"
-          url: "https://compass.gekkovet.com"
 
   - type: trustLine
     text: "2,900+ veterinary professionals across 95 countries"
