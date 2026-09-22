@@ -3,6 +3,13 @@ languageCode = 'en-us'
 title = 'GekkoVet'
 disableKinds = ['taxonomy', 'term', 'RSS']
 
+# Hugo 0.166 runs the Tailwind CSS v4 binary through the exec security policy.
+# Setting this key replaces Hugo's default allow-list, so the defaults are
+# repeated here alongside tailwindcss.
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']
+
 [params]
   tagline = 'The clinical intelligence layer for veterinary platforms and insurers.'
   description = 'GekkoVet is the clinical intelligence layer for veterinary platforms and insurers — eight years of DVM-validated, evidence-based veterinary knowledge, structured and ready to integrate.'
